@@ -15,13 +15,16 @@ color1.addEventListener("input", setGradient);
 color2.addEventListener("input", setGradient);
 
 let generateRandomColor = function () {
-  return Math.floor(Math.random() * 16777215).toString(16);
+  return (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6);
 };
 
 button.addEventListener("click", function () {
   let randomColor1 = generateRandomColor();
   let randomColor2 = generateRandomColor();
+
   color1.value = `#${randomColor1}`;
   color2.value = `#${randomColor2}`;
+
   body.style.background = `linear-gradient(to right, #${randomColor1}, #${randomColor2})`;
+  h3.textContent = body.style.background;
 });
