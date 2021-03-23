@@ -1,22 +1,21 @@
-let h3 = document.querySelector("h3");
-let color1 = document.querySelector(".color1");
-let color2 = document.querySelector(".color2");
-let body = document.getElementById("gradient");
-let button = document.querySelector("button");
+const h3 = document.querySelector("h3");
+const [color1, color2] = document.querySelectorAll(".color");
+const body = document.getElementById("gradient");
+const button = document.querySelector("button");
 
-let setGradient = function () {
+const setGradient = () => {
   body.style.background = `linear-gradient(to right, ${color1.value}, ${color2.value})`;
   h3.textContent = body.style.background;
+};
+
+const generateRandomColor = () => {
+  return "#" + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6);
 };
 
 setGradient();
 
 color1.addEventListener("input", setGradient);
 color2.addEventListener("input", setGradient);
-
-let generateRandomColor = function () {
-  return "#" + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6);
-};
 
 button.addEventListener("click", function () {
   let randomColor1 = generateRandomColor();
