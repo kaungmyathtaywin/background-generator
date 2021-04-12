@@ -1,3 +1,3 @@
-# Background Generator (JavaScript)
+## Background Generator
 
-Simple DOM manipulation with vanilla javascript.
+DOM mannipulation with vanilla javascript. Tutorial project from Complete Web Developer: Zero to Mastery.
